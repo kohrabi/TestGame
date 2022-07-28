@@ -49,10 +49,22 @@ function PlayerState_Free(){
 	}
 	else
 	{
+		if (sprite_index == sPlayerFall)
+		{
+			audio_play_sound(sfFoot3, 5, false);
+			audio_sound_pitch(sfLandingDirt, random_range(0.5, 1));
+			audio_sound_pitch(sfMetalClink, random_range(0.5, 1));
+			audio_play_sound(sfLandingDirt, 5, false);
+			audio_play_sound(sfMetalClink, 4, false);
+		}
 		if (hsp == 0)
 			sprite_index = sPlayerIdle;
 		else
+		{
 			sprite_index = sPlayerRun;
+			if (image_index >= 1 && image_index <= 1.2) || (image_index >= 6 && image_index <= 6.2)
+				audio_play_sound(choose(sfFoot1, sfFoot2, sfFoot3, sfFoot4), 5, false);
+		}
 	}
 	
 	if (sign(hsp) > 0 || key_right)

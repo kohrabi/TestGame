@@ -6,7 +6,7 @@
     "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "EnemyState_Dead",
+  "name": "PlayerState_Dead",
   "tags": [],
   "resourceType": "GMScript",
 }

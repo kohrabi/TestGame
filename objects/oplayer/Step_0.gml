@@ -20,5 +20,6 @@ switch (state)
 	case PLAYER_STATE.FREE: PlayerState_Free(); break;
 	case PLAYER_STATE.ATTACK1: PlayerState_Attack1(); break;
 	case PLAYER_STATE.ATTACK2: PlayerState_Attack2(); break;
+	case PLAYER_STATE.DEAD: PlayerState_Dead(); break;
 }
 

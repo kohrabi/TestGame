@@ -20,7 +20,7 @@ for (var i = 0; i < menu_items; i++)
 	
 	var xx = menu_x;
 	var yy = menu_y - (menu_itemheight * (i * 1.5));
-	if (i == 2)
+	if (i == 3)
 	{
 		var pogWid = sprite_get_width(sMenuPog) / 4;
 		var pogHei = sprite_get_height(sMenuPog) / 2;

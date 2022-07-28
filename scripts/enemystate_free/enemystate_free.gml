@@ -4,6 +4,12 @@ function EnemyState_Free(){
 	// Calculate Movement
 	vsp += grv;
 	
+	// Don't walk off edges
+	if (grounded && afraidofheights && !place_meeting(x + hsp, y + 1, oWall))
+	{
+		hsp = -hsp;
+	}
+	
 	// Horizontal Collision
 	if (place_meeting(x + hsp, y, oWall))
 	{
@@ -30,14 +36,19 @@ function EnemyState_Free(){
 	
 	if (!place_meeting(x, y + 1, oWall))
 	{
+		grounded = false;
 		if (hsp == 0)
 			sprite_index = idleSprite;
 		else
 			sprite_index = walkSprite;
 	}
+	else
+	{
+		grounded = true;
+	}
 	
 	if (sign(hsp) > 0)
-		image_xscale = size;
+		image_xscale = -size;
 	else if (sign(hsp) < 0)
 		image_xscale = size;
 }

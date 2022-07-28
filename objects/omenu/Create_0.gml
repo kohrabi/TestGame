@@ -15,9 +15,12 @@ menu_itemheight = font_get_size(fMenu);
 menu_committed = -1;
 menu_control = true;
 
-menu[2] = "New Game";
-menu[1] = "Continue";
+menu[3] = "New Game";
+menu[2] = "Continue";
+menu[1] = "Credits";
 menu[0] = "Quit";
 
 menu_items = array_length_1d(menu);
 menu_cursor = 2;
+
+audio_play_sound(sMenu, 100, true);
