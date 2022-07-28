@@ -5,6 +5,13 @@ function PlayerState_Free(){
 	hsp = (key_right - key_left) * walksp;
 	vsp += grv;
 	
+	canjump--;
+	if (canjump > 0 && key_jump)
+	{
+		vsp = -10;
+		canjump = 0;	
+	}
+	
 	// Vertical Collision
 	if (place_meeting(x, y + vsp, oWall))
 	{
@@ -16,9 +23,6 @@ function PlayerState_Free(){
 	}
 	
 	y += vsp;
-	
-	if (place_meeting(x, y + 1, oWall) && key_jump)
-		vsp = -10;
 	
 	// Horizontal Collision
 	if (place_meeting(x + hsp, y, oWall))
@@ -49,6 +53,7 @@ function PlayerState_Free(){
 	}
 	else
 	{
+		canjump = 10;
 		if (sprite_index == sPlayerFall)
 		{
 			audio_play_sound(sfFoot3, 5, false);

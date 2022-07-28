@@ -5,6 +5,7 @@ walksp = 4; // Walk speed
 attackNow = false;
 hascontrol = true;
 done = 0;
+canjump = 0;
 
 state = PLAYER_STATE.FREE;
 hitByAttack = ds_list_create();
