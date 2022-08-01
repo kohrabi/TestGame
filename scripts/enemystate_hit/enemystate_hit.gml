@@ -41,7 +41,6 @@ function EnemyState_Hit(){
 	else if (animation_end())
 	{
 		state = ENEMY_STATE.FREE;
-		sprite_index = idleSprite;
 		hsp = walksp;
 	}
 }

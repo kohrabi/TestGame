@@ -1,4 +1,5 @@
 /// @description Die
+/*
 state = PLAYER_STATE.DEAD;
 if (sprite_index != sPlayerDead)
 {
@@ -9,4 +10,4 @@ if (sprite_index != sPlayerDead)
 	game_set_speed(30, gamespeed_fps);
 	image_index = 0;
 	image_speed = 1;
-}
+}*/

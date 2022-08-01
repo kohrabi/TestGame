@@ -7,5 +7,8 @@ enum ENEMY_STATE
 {
 	FREE,
 	HIT,
-	DEAD
+	DEAD,
+	REACT,
+	CHASE,
+	ATTACK
 }

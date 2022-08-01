@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "EnemyState",
+    "path": "folders/Scripts/EnemyState.yy",
   },
   "resourceVersion": "1.0",
   "name": "EnemyState_Hit",

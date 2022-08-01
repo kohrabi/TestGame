@@ -4,32 +4,7 @@ function PlayerState_Dead(){
 	sprite_index = sPlayerDead;
 	if (done == 0)
 	{
-		// Gravity
-		vsp += grv;
-		
-		// Horizontal Collision
-		if (place_meeting(x + hsp, y, oWall))
-		{
-			while (!place_meeting(x + sign(hsp), y, oWall))
-			{
-				x += sign(hsp);
-			}
-			hsp = 0;		
-		}
-		
-		x += hsp;
-		
-		// Vertical Collision
-		if (place_meeting(x, y + vsp, oWall))
-		{
-			while (!place_meeting(x, y + sign(vsp), oWall))
-			{
-				 y += sign(vsp);
-			}
-			vsp = 0;		
-		}
-		
-		y += vsp;
+		ProcessMovement();
 		
 		if (place_meeting(x, y + 1, oWall))
 		{
@@ -37,6 +12,8 @@ function PlayerState_Dead(){
 			hsp = 0;
 			vsp = 0;
 		}
+		else
+			vsp += 10;
 		if (animation_end())
 			image_speed = 0;
 	}
