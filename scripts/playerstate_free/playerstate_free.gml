@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function PlayerState_Free(){
 	// Calculate Movement
-	/*if (key_crouch)
+	if (key_crouch)
 	{
 		walksp = 2;
 		jumpheight = -12;
@@ -12,6 +12,8 @@ function PlayerState_Free(){
 		walksp = 4;
 		jumpheight = -10;
 	}
+	
+	hsp = (key_right - key_left) * walksp;
 	
 	dashDuration = max(0, dashDuration - 1);
 	if (key_dash)
@@ -26,57 +28,17 @@ function PlayerState_Free(){
 	
 	if (dashDuration > 0)
 	{
+		ScreenShake(10, 10);
 		vsp = 0;
 		hsp = sign(image_xscale) * dashSpeed; 
 	}
-	else*/
-	vsp += grv;
-	hsp = (key_right - key_left) * walksp;	
-	
-	hsp += hsp_fraction;
-	vsp += vsp_fraction;
-	
-	hsp_fraction = hsp - (floor(abs(hsp)) * sign(hsp));
-	hsp -= hsp_fraction;
-	vsp_fraction = vsp - (floor(abs(vsp)) * sign(vsp));
-	vsp -= vsp_fraction;
-		
-	// Horizontal Collision
-	var bbox_side;
-	if (hsp > 0)
-		bbox_side = bbox_right;
 	else
-		bbox_side = bbox_left;
-	p1 = tilemap_get_at_pixel(global.tilemap, bbox_side + hsp, bbox_top);
-	p2 = tilemap_get_at_pixel(global.tilemap, bbox_side + hsp, bbox_bottom);
-	if (p1 == 1 || p2 == 1)
-	{
-		if (hsp > 0)
-			x = x - (x % 24) + 23 - (bbox_right - x);
-		else
-			x = x - (x % 24) - (bbox_left - x);
-		hsp = 0;
-	}
-	x += hsp;
+		vsp += grv;
 	
-	if (vsp > 0)
-		bbox_side = bbox_bottom;
-	else
-		bbox_side = bbox_top;
-	p1 = tilemap_get_at_pixel(global.tilemap, bbox_left, bbox_side + vsp);
-	p2 = tilemap_get_at_pixel(global.tilemap, bbox_right, bbox_side + vsp);
-	if (p1 == 1 || p2 == 1)
-	{
-		if (vsp > 0)
-			y = y - (y % 24) + 23 - (bbox_bottom - y);
-		else
-			y = y - (y % 24) - (bbox_top - y);
-		vsp = 0;
-	}
-	y += vsp;
+	ProcessMovement();
 	
-	/*
-	if (!tile_meeting(0, 1))
+	
+	if (!place_meeting(x, y + 1, oWall))
 	{
 		if (sign(vsp) > 0)
 		{
@@ -143,5 +105,5 @@ function PlayerState_Free(){
 		
 	if (key_attack)
 		state = PLAYER_STATE.ATTACK1;
-	*/
+	
 }

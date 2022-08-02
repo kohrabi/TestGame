@@ -5,32 +5,12 @@ function EnemyState_Free(){
 	vsp += grv;
 	
 	// Don't walk off edges
-	if (grounded && afraidofheights && !tile_meeting(hsp, 1))
-	{
+	if (grounded && afraidofheights && !place_meeting(x + hsp, y + 1, oWall))
 		hsp = -hsp;
-	}
 
-	if (tile_meeting(hsp, 0))
-	{
-		if (hsp > 0)
-			x = x - (x % 24) + 23 - (bbox_right - x);
-		else
-			x = x - (x % 24) - (bbox_left - x);
-		hsp = -hsp;
-	}
-	x += hsp;
+	ProcessMovement();
 	
-	if (tile_meeting(0, vsp))
-	{
-		if (vsp > 0)
-			y = y - (y % 24) + 23 - (bbox_bottom - y);
-		else
-			y = y - (y % 24) - (bbox_top - y);
-		vsp = 0;
-	}
-	y += vsp;
-	
-	if (tile_meeting(0, 1))
+	if (place_meeting(x, y + 1, oWall))
 	{
 		grounded = true;
 		if (hsp == 0)
