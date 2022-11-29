@@ -3,8 +3,10 @@ vsp = 0; // Vertical speed
 hsp_fraction = 0;
 vsp_fraction = 0;
 grv = 0.4; // Gravity
-walksp = 4.0; // Walk speed
-jumpheight = -10;
+// Walk speed and jump height are set in the PlayerState_Free() function
+walksp = 0; // Walk speed
+jumpheight = 0;
+
 attackNow = false;
 hascontrol = true;
 done = 0;
@@ -14,7 +16,6 @@ dashSpeed = 10;
 
 state = PLAYER_STATE.FREE;
 hitByAttack = ds_list_create();
-global.tilemap = layer_tilemap_get_id("Collision");
 
 enum PLAYER_STATE
 {

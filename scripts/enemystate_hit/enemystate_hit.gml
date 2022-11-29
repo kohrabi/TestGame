@@ -40,7 +40,7 @@ function EnemyState_Hit(){
 	}
 	else if (animation_end())
 	{
-		state = ENEMY_STATE.FREE;
 		hsp = walksp;
+		state = ENEMY_STATE.FREE;
 	}
 }

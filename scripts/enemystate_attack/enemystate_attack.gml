@@ -1,11 +1,11 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function EnemyState_Attack(){
-	sprite_index = sEnemySkeletonAttack;
+	sprite_index = attackSprite;
 	image_speed = 1;
-	if (image_index >= 7 && image_index <= 12.2)
+	if (image_index >= attackBegin && image_index <= attackEnd)
 	{
-		mask_index = sEnemySkeletonAttackHB;
+		mask_index = attackHB;
 		if (place_meeting(x, y, oPlayer))
 		{
 			with (oPlayer)
@@ -23,7 +23,7 @@ function EnemyState_Attack(){
 				}
 			}
 		}
-		mask_index = sEnemySkeletonIdle;
+		mask_index = idleSprite;
 	}
 	else if (animation_end())
 		state = ENEMY_STATE.FREE;

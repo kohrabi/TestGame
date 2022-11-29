@@ -4,13 +4,13 @@ function PlayerState_Free(){
 	// Calculate Movement
 	if (key_crouch)
 	{
-		walksp = 2;
-		jumpheight = -12;
+		walksp = 1.5;
+		jumpheight = -8.5;
 	}
 	else
 	{
-		walksp = 4;
-		jumpheight = -10;
+		walksp = 3;
+		jumpheight = -7;
 	}
 	
 	hsp = (key_right - key_left) * walksp;
@@ -99,9 +99,9 @@ function PlayerState_Free(){
 		image_index = sPlayerDash;
 	
 	if (sign(hsp) > 0 || key_right)
-		image_xscale = 2.2;
+		image_xscale = 1.3;
 	else if (sign(hsp) < 0 || key_left)
-		image_xscale = -2.2;
+		image_xscale = -1.3;
 		
 	if (key_attack)
 		state = PLAYER_STATE.ATTACK1;

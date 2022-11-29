@@ -86,8 +86,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Player",
-    "path": "folders/Sprites/Player.yy",
+    "name": "Knight",
+    "path": "folders/Sprites/Player/Knight.yy",
   },
   "resourceVersion": "1.0",
   "name": "sPlayerAttack1HB",

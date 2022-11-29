@@ -25,8 +25,8 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"f5b877d9-3e29-4f21-9c85-d481211d350b","path":"sprites/sEnemySkeletonFoundHB/sEnemySkeletonFoundHB.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f5b877d9-3e29-4f21-9c85-d481211d350b","path":"sprites/sEnemySkeletonFoundHB/sEnemySkeletonFoundHB.yy",},"LayerId":{"name":"0cf22999-0376-4dfd-855d-7ef5638a8754","path":"sprites/sEnemySkeletonFoundHB/sEnemySkeletonFoundHB.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"f5b877d9-3e29-4f21-9c85-d481211d350b","path":"sprites/sEnemySkeletonFoundHB/sEnemySkeletonFoundHB.yy",},"LayerId":{"name":"11515f3e-d4c2-425e-afe0-e83b1973e68c","path":"sprites/sEnemySkeletonFoundHB/sEnemySkeletonFoundHB.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"f5b877d9-3e29-4f21-9c85-d481211d350b","path":"sprites/sEnemySkeletonFoundHB/sEnemySkeletonFoundHB.yy",},"LayerId":{"name":"0cf22999-0376-4dfd-855d-7ef5638a8754","path":"sprites/sEnemySkeletonFoundHB/sEnemySkeletonFoundHB.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sEnemySkeletonFoundHB","path":"sprites/sEnemySkeletonFoundHB/sEnemySkeletonFoundHB.yy",},"resourceVersion":"1.0","name":"f5b877d9-3e29-4f21-9c85-d481211d350b","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {

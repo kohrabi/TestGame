@@ -47,17 +47,15 @@ function EnemyState_Chase(){
 		else
 			grounded = false;
 		
-		if (sign(hsp) > 0)
-			image_xscale = -size;
-		else if (sign(hsp) < 0)
-			image_xscale = size;
+		if (sign(hsp) != 0)
+			image_xscale = size * sign(hsp);
 		
 		if (grounded)
 		{
-			mask_index = sEnemySkeletonFoundHB;
+			mask_index = foundHB;
 			if (place_meeting(x, y, oPlayer))
 				state = ENEMY_STATE.ATTACK;
-			mask_index = sEnemySkeletonIdle;
+			mask_index = idleSprite;
 		}
 	}
 	else

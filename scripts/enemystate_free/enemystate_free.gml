@@ -8,7 +8,27 @@ function EnemyState_Free(){
 	if (grounded && afraidofheights && !place_meeting(x + hsp, y + 1, oWall))
 		hsp = -hsp;
 
-	ProcessMovement();
+	// Horizontal Collision
+	if (place_meeting(x + hsp, y, oWall))
+	{
+		var sgn = sign(hsp);
+		while (!place_meeting(x + sgn, y, oWall))
+			x += sgn;
+		hsp = -hsp;		
+	}
+	
+	x += hsp;
+	
+	// Vertical Collision
+	if (place_meeting(x, y + vsp, oWall))
+	{
+		var sgn = sign(vsp);
+		while (!place_meeting(x, y + sgn, oWall))
+			 y += sgn;
+		vsp = 0;		
+	}
+	
+	y += vsp;
 	
 	if (place_meeting(x, y + 1, oWall))
 	{
@@ -21,15 +41,13 @@ function EnemyState_Free(){
 	else
 		grounded = false;
 	
-	if (sign(hsp) > 0)
-		image_xscale = -size;
-	else if (sign(hsp) < 0)
-		image_xscale = size;
+	if (sign(hsp) != 0)
+		image_xscale = size * sign(hsp);
 	
 	if (grounded)
 	{
 		if (distance_to_object(oPlayer) < 100 && 
 			!collision_line(x, y, oPlayer.x, oPlayer.y, oWall, false, false))
-			state = ENEMY_STATE.REACT;
+			state = ENEMY_STATE.CHASE;
 	}
 }

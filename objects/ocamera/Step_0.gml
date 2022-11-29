@@ -24,14 +24,14 @@ shake_remain = max(0, shake_remain - ((1 / shake_length) * shake_magnitude));
 camera_set_view_pos(cam, x - view_w_half, y - view_h_half);	
 if (layer_exists("BackgroundLayer1"))
 {
-	layer_x("BackgroundLayer1", x / 15);
+	layer_x("BackgroundLayer1", x / 300);
 }
 if (layer_exists("BackgroundLayer2"))
 {
-	layer_x("BackgroundLayer2", x / 10);
+	layer_x("BackgroundLayer2", -x / 40);
 }
 
 if (layer_exists("BackgroundLayer3"))
 {
-	layer_x("BackgroundLayer3", x / 8);
+	layer_x("BackgroundLayer3", -x / 20);
 }
